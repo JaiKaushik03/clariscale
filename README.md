@@ -1,5 +1,16 @@
 # CAP 5627 Project 2.1 offline classroom package
 
+## Tested screenshots
+
+Captured from the current offline fallback implementation on November 7, 2026. TESTDEMO is a synthetic software demonstration, not a participant or study finding. The free-text sequence saved four fictional answers and advanced to multiple-choice collection. All 80 unit checks and 33 PR regression checks passed. These images show the repository's offline interface; they do not demonstrate a voice/virtual-agent integration.
+
+![Synthetic demonstration setup](docs/screenshots/setup.png)
+
+![Free-text question](docs/screenshots/free-text.png)
+
+![Multiple-choice question](docs/screenshots/multiple-choice.png)
+
+
 
 PR #1 review evidence: [full report](PR1_Full_Test_Report.md), [synthetic test export ZIP](PR1_Review_For_Valentina.zip), and [simple Jai guide](Jai_What_Codex_Did.md). All software-test exports are synthetic; PR #1 is not merged.
 
