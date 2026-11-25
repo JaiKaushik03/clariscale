@@ -33,8 +33,8 @@ The project directory is this repository root.
 - Trial log: [PSS4_Offline_Trial_Log.xlsx](03_Baseline/PSS4_Offline_Trial_Log.xlsx)
 - One-page protocol: [PSS4_One_Page_Baseline_Protocol.pdf](03_Baseline/PSS4_One_Page_Baseline_Protocol.pdf)
 - Updated original tracker: [Kloster_Liu_CAP5627_Project1_TaskList_Updated.xlsx](04_Project_Tracker/Kloster_Liu_CAP5627_Project1_TaskList_Updated.xlsx)
-- Technical handoff: [Technical_Handoff.docx](05_Technical_Handoff/Technical_Handoff.docx)
-- Screenshots: [README.md](05_Technical_Handoff/Screenshots/README.md)
+- Technical technical documentation: [Implementation_Reference.docx](technical/Implementation_Reference.docx)
+- Screenshots: [README.md](technical/Screenshots/README.md)
 - Jai guide: [Jai_Implementation_Explanation.docx](06_Jai_Guide/Jai_Implementation_Explanation.docx)
 - Run instructions: [README.md](README.md)
 
@@ -46,32 +46,6 @@ The collection infrastructure is ready; genuine pilot data is absent and the rea
 
 Open index.html, enter TESTDEMO, select AB and Synthetic software test, then Start assigned condition. Complete A with any choices. In B type Sometimes on item 1; It depends then Maybe on item 2 to show clarification and fixed-choice fallback; leave item 3 empty twice; type Fairly often on item 4. Open Researcher tools, expand Developer mapping check and check Almost never to show category 1. Export CSV and backup JSON. These demonstrations are synthetic. Follow the protocol with anonymous P codes and Offline fallback baseline for actual collection.
 
-## 7 Valentina handoff
+## 7 Technical documentation
 
-Give Valentina the whole project folder or ZIP so relative app/test links remain usable. Her primary materials are Technical_Handoff.docx, Technical_Evidence.csv, all 13 Screenshots PNGs and their index, the updated tracker, protocol and trial workbook. The handoff includes the original research question, variables, hypotheses, architecture, algorithm, research/theory attribution, social controls, exact test evidence, a blank genuine-results table and presentation requirements. The Jai guide provides operation and rehearsal support. No PowerPoint or assignment presentation PDF was created.
-
-## 8 Remaining work before October 26
-
-1. Perform human team dry runs and collect a few actual classmates' fallback trials with consent and assigned order.
-2. Enter the genuine data, inspect exclusions and compute descriptive baseline results.
-3. Confirm actual work hours and human presentation progress in the tracker.
-4. Valentina assembles the presentation; both members review and rehearse. Include one genuine screenshot/demo of no more than 30 seconds, real baseline results and the November 9 completion plan.
-5. Review official-template compatibility and ask the instructor about the 20-point versus 40-point display discrepancy if needed.
-6. By October 26 at 11:59 PM Eastern submit p2-2.1-kloster-liu.pdf, updated tracker and baseline log. No submission or professor message has been sent.
-
-## 9 Professor questions
-
-- Is this eEVA integrated? No; it is the authorized offline fallback described in the supplied instructions.
-- What is the mapper? A transparent deterministic English frequency-phrase heuristic, with conservative clarification rules.
-- Does manual fallback improve automatic agreement? No; manual selections are excluded and reported separately.
-- What is actually measured? Paired raw-category agreement, time and clarification/fallback; SUS remains for later evaluation.
-- Are the pilot results available? No genuine data was supplied or collected; software fixtures are labeled synthetic.
-- Why reverse Q2/Q3? They describe positive experiences; reverse only for the total stress score.
-- Why AB/BA? To distribute order effects while each person serves as their own comparison.
-- What did each member do? Historical ownership remains unchanged; Jai coordinates current technical work and Valentina creates the presentation. Actual hours remain unconfirmed.
-
-The learning guide contains 18 realistic questions and answers tied to the actual implementation.
-
-## 10 Honest limitations
-
-Only Edge was executed here; Chrome is an intended compatible browser, without a direct test in this run. File-URL local storage varies by browser policy. The log has capacity for 200 item rows; extending it requires extending formulas/validation and reverification. The official trial-log template was not available, so the workbook is explicitly a replacement. No genuine participant responses, consent, completion times, SUS scores or actual hours were fabricated. The professor's authorization and literature numerical findings are attributed to the supplied instructions/proposal summary, without independent email or paper verification. The offline interface has no avatar, voice, expression or gesture. Clinical validity, broad equivalence and final evaluation completion are not established.
+The technical reference covers the research question, variables, hypotheses, architecture, algorithm, source attribution, social controls and verification evidence. Screenshots and evidence tables accompany the implementation reference.

@@ -46,7 +46,7 @@ powershell work/pr1_excel_verify.ps1
 git -C work/pr1-repo diff --check
 ```
 
-For the browser run, `PSS_TEST_OUTPUT` selected this handoff directory and `NODE_PATH` selected the installed Playwright dependency. Repository-relative reruns are `node 02_Tests/pr1_regressions.cjs`, `node 02_Tests/deferred.cjs`, and `node 02_Tests/browser_verify.cjs`; the browser script requires Playwright and Edge. Core unit tests require no npm packages.
+For the browser run, `PSS_TEST_OUTPUT` selected this technical documentation directory and `NODE_PATH` selected the installed Playwright dependency. Repository-relative reruns are `node 02_Tests/pr1_regressions.cjs`, `node 02_Tests/deferred.cjs`, and `node 02_Tests/browser_verify.cjs`; the browser script requires Playwright and Edge. Core unit tests require no npm packages.
 
 ## Browser Tests
 
@@ -113,7 +113,7 @@ Blind coding exports contain original text and the selected coder’s column, ex
 | Research tools were reachable from participant setup and the old browser test expected AB/BA controls | Separate the researcher workspace and hide it during participant collection. Replace the obsolete UI driver with fixed-BA scenarios. |
 | Historical README and old replacement-workbook instructions conflicted with the current PR | Add a prominent current-version notice. Preserve original documents, identify the 32-column versus 28-column mismatch and defer official v2 workbook ownership to Valentina. |
 
-Required additions beyond defect fixes are the blind coding exports, full manual-comparison family, CLI comparison script, provisional adapter tests, new regression suite and actual browser-export handoff. No unnecessary questionnaire rewrite was performed.
+Required additions beyond defect fixes are the blind coding exports, full manual-comparison family, CLI comparison script, provisional adapter tests, new regression suite and actual browser-export technical documentation. No unnecessary questionnaire rewrite was performed.
 
 ## Outstanding Limitations
 
