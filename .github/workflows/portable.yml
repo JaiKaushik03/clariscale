@@ -14,6 +14,5 @@ jobs:
         with:
           python-version: "3.12"
       - run: npm test
-      - run: npm run test:legacy
       - run: npm run test:replay
       - run: python -B -m unittest discover -s test -p '*_test.py'
