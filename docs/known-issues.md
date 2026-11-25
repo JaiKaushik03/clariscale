@@ -8,5 +8,4 @@
 - Manual-upload acknowledgments do not prove arrival. Verify one fictional upload separately in an authorized environment.
 - The deterministic English lexicon can miss valid wording and over-abstain on any explicit negation. It does not infer emotion or understand unrestricted language.
 - Public synthetic test success does not imply study accuracy. Historical order mistakes, unrecovered logs, item/format confounding and small samples remain limitations after fixes.
-- Existing binary technical documentation documents and archives are retained for history. Automated text/ZIP inspection is a bounded check, not a guarantee that all old assets are safe or legally redistributable. Do not rewrite history without a separate authorized remediation decision.
 - No open-source license was present at finalization. Existing ownership and institutional/framework restrictions still apply.

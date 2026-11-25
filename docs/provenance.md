@@ -2,7 +2,7 @@
 
 This is the same repository and research project, renamed from `cap5627-pss4-baseline-22-oct` through a brief HyperGrid identity to ClariScale. Existing contributors, commits and historical branches remain unchanged. The original study title is **Questionnaires vs. Natural Conversations**.
 
-1. The offline PSS-4 baseline and original technical documentation materials stay in their historical folders. `docs/historical-baseline-readme.md` preserves the prior README, whose old dates and pending statements are historical, not current status.
+1. The historical offline PSS-4 source, tests and protocol remain available. Superseded coursework packages and personal guides have been removed from the current tree; original materials remain in Git history.
 2. `provenance/participant-study` is the original PSS-10 source recovered for the technical review. Sanitization removes operational encryption configuration and any real upload destinations. Its original order bug is preserved for inspection.
 3. `provenance/order-fixed` records the post-collection requested-order fix. Original code could read an order but omit it from reservation. The patch passes it through. The source manifest records hashes of private originals before sanitization.
 4. Later deployed version `PSS10-eeva-3.1.0-manual-xlsx-upload` is the basis of `integrations/eeva`. November 20 synthetic AB and BA sessions exercised fixed item allocations, clarification, fallback, both SUS forms, XLSX and completion acknowledgments. Native JSON was absent then. Speech/visual cues and actual upload arrival were not independently established by that QA.
