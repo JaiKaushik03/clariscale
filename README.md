@@ -2,9 +2,9 @@
 
 **Conversational Assessment Platform**
 
-A JavaScript research prototype for comparing fixed-choice questionnaires with typed conversational responses. ClariScale uses deterministic frequency rules, one neutral clarification and a structured fallback, with an eEVA/SAGE embodied-agent integration and reproducible pilot analysis.
+A JavaScript platform for structured questionnaires and conversational assessment workflows. ClariScale uses deterministic frequency rules, one neutral clarification and a structured fallback, with an eEVA/SAGE embodied-agent integration and reproducible pilot analysis.
 
-Built by **Jai Lnu and Valentina Kloster**, Florida International University, CAP5627 Socially Interactive Agents, Fall 2026. Origin: **Questionnaires vs. Natural Conversations**. ClariScale names the project, not a newly validated instrument.
+**Engineering implementation and maintenance: Jai Lnu.** The platform combines inspectable language rules, browser-side experiment orchestration and participant-controlled data exports.
 
 ## See it in five minutes
 
@@ -50,7 +50,7 @@ The eEVA adapter preserves its own UI lifecycle. The new independently tested li
 
 | Stage | Location | Meaning |
 |---|---|---|
-| Historical PSS-4 baseline | 01_Application, 02_Tests | Preserved offline fallback while eEVA was unavailable |
+| Historical PSS-4 baseline | legacy/01_Application, legacy/02_Tests | Preserved offline fallback while eEVA was unavailable |
 | Participant-study source | provenance/participant-study | Sanitized source snapshot; original order bug remains visible |
 | Post-collection order fix | provenance/order-fixed | Requested order passed into reservation; not retroactive |
 | Later deployed PSS-10 | source manifest and QA notes | Real native XLSX; JSON absent in that deployed release |
@@ -90,15 +90,15 @@ Recomputed from the original CSV, not spreadsheet summary caches. Differences ar
 
 The two subsets differ. B took longer in all nine eligible time pairs. Different question content confounds format, so these are exploratory associations, not causal effects or proof of noninferiority. See [evaluation](docs/evaluation.md) for exclusions, sensitivity analysis and replay. No overall accuracy improvement is supported.
 
-## Engineering contributions and credit
+## Engineering contributions
 
-Jai's technical work includes the JavaScript study interface, deterministic mapper integration, order-debugging work, browser persistence/export engineering and regression verification, with AI assistance. Valentina's study/protocol, independent coding, analysis and presentation contributions remain credited. The research project is shared work; commit attribution is preserved. See [portfolio](docs/portfolio.md).
+Jai's implementation work spans the JavaScript assessment interface, deterministic mapper integration, requested-order debugging, browser persistence, participant-only exports and regression verification. The current code adds a shared core, versioned export contracts, a portable lifecycle model and private-input statistical tooling.
 
-eEVA/SAGE supplies the 3D agent and framework APIs. This project orchestrates the assessment and requests its programmed cue policy; it does not implement the underlying avatar renderer.
+eEVA/SAGE supplies the 3D agent and framework APIs. ClariScale controls study flow, interpretation, scoring and logs. See the [technical portfolio](docs/portfolio.md) for implementation decisions and measured results.
 
 ## Read further
 
-[Architecture](docs/architecture.md) · [Protocol](docs/protocol.md) · [Scoring](docs/scoring.md) · [Contracts](docs/contracts.md) · [Provenance](docs/provenance.md) · [Evaluation](docs/evaluation.md) · [Known issues](docs/known-issues.md)
+[Architecture](docs/architecture.md) · [Protocol](docs/protocol.md) · [Scoring](docs/scoring.md) · [Contracts](docs/contracts.md) · [Research provenance and attribution](docs/provenance.md) · [Evaluation](docs/evaluation.md) · [Known issues](docs/known-issues.md)
 
 ## Responsible use and licensing
 
