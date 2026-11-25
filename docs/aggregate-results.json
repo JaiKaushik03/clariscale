@@ -1,0 +1,51 @@
+{
+  "source_sha256": "e97e152690bd071b0fa6a6ffbddbf75f87478185e570008eac2754359d3381fc",
+  "consented_records": 10,
+  "assigned_orders": {
+    "AB": 5,
+    "BA": 5
+  },
+  "complete_pss_records": 8,
+  "SUS": {
+    "n": 9,
+    "A_mean": 89.72222222222223,
+    "B_mean": 75.55555555555556,
+    "difference": -14.166666666666666,
+    "ci95": [
+      -31.48836698106407,
+      3.155033647730738
+    ],
+    "p_exploratory": 0.09601800875702282,
+    "B_greater_count": 2
+  },
+  "primary_item_time_seconds": {
+    "n": 9,
+    "A_mean": 37.116,
+    "B_mean": 139.79066666666665,
+    "difference": 102.67466666666667,
+    "ci95": [
+      35.1323288783603,
+      170.21700445497305
+    ],
+    "p_exploratory": 0.008014487129187176,
+    "B_greater_count": 9
+  },
+  "all_ten_time_sensitivity": {
+    "n": 10,
+    "A_mean": 38.3729,
+    "B_mean": 127.0642,
+    "difference": 88.6913,
+    "ci95": [
+      21.514480024297313,
+      155.86811997570268
+    ],
+    "p_exploratory": 0.015283755536074084,
+    "B_greater_count": 9
+  },
+  "caveats": [
+    "The n=9 subsets differ.",
+    "Different item content confounds response format.",
+    "Assigned order is not verified historical actual order.",
+    "Intervals and p-values are exploratory paired t estimates."
+  ]
+}

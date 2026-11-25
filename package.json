@@ -1,0 +1,15 @@
+{
+  "name": "clariscale",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Conversational Assessment Platform",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.cjs && node test/allocator.cjs",
+    "test:legacy": "node 02_Tests/run_tests.cjs && node 02_Tests/pr1_regressions.cjs",
+    "test:replay": "node analysis/replay.cjs",
+    "demo": "node demo/server.cjs"
+  }
+}

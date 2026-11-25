@@ -1,0 +1,13 @@
+# Provenance and contribution boundaries
+
+This is the same repository and research project, renamed from `cap5627-pss4-baseline-22-oct` through a brief HyperGrid identity to ClariScale. Existing contributors, commits and historical branches remain unchanged. The original study title is **Questionnaires vs. Natural Conversations**.
+
+1. The offline PSS-4 baseline and original handoff materials stay in their historical folders. `docs/historical-baseline-readme.md` preserves the prior README, whose old dates and pending statements are historical, not current status.
+2. `provenance/participant-study` is the original PSS-10 source recovered for the technical review. Sanitization removes operational encryption configuration and any real upload destinations. Its original order bug is preserved for inspection.
+3. `provenance/order-fixed` records the post-collection requested-order fix. Original code could read an order but omit it from reservation. The patch passes it through. The source manifest records hashes of private originals before sanitization.
+4. Later deployed version `PSS10-eeva-3.1.0-manual-xlsx-upload` is the basis of `integrations/eeva`. November 20 synthetic AB and BA sessions exercised fixed item allocations, clarification, fallback, both SUS forms, XLSX and completion acknowledgments. Native JSON was absent then. Speech/visual cues and actual upload arrival were not independently established by that QA.
+5. ClariScale finalization (November 25) extracts the shared core, adds validation, missingness regression tests, own-session JSON backup, item-sum timing, portable demo/lifecycle, CI and private-input analysis. These changes were not used in historical participant collection and are not deployed to the institutional project by this PR.
+
+The inspected original native archive contained one complete and two partial study-labelled sessions. A separate verified archive added two synthetic QA sessions. One linked participant was assigned BA in Qualtrics but executed AB natively. Other historical executed orders remain unverified. The public description deliberately excludes identifying participant codes and record-level outcomes.
+
+Jai Lnu led technical implementation/debugging and verification with AI assistance. Valentina Kloster remains credited for shared study/protocol, coding, analysis and presentation work. This division reflects the available handoff evidence, not sole ownership of shared outputs. Existing Git attribution remains authoritative for commit authorship. eEVA/SAGE owns its framework/agent assets. No new license or rights to redistribute institutional assets are asserted.

@@ -1,0 +1,14 @@
+[
+  {
+    "text": "Synthetic: sometimes",
+    "closed_reference": 2,
+    "baseline_prediction": 2,
+    "human_category": null
+  },
+  {
+    "text": "Synthetic: maybe",
+    "closed_reference": 0,
+    "baseline_prediction": null,
+    "human_category": null
+  }
+]
