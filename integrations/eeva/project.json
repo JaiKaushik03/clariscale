@@ -1,0 +1,10 @@
+{
+  "name": "ClariScale — Conversational Assessment Platform",
+  "entry": "src/main.js",
+  "runtime": "browser-js",
+  "idea": "conversational-health-assessment",
+  "guidelineRevision": "2026-08-06",
+  "helperGroups": [
+    "VoiceManager"
+  ]
+}

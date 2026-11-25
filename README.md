@@ -1,66 +1,107 @@
-# CAP 5627 Project 2.1 offline classroom package
+# ClariScale
 
-## Tested screenshots
+**Conversational Assessment Platform**
 
-Captured from the current offline fallback implementation on November 7, 2026. TESTDEMO is a synthetic software demonstration, not a participant or study finding. The free-text sequence saved four fictional answers and advanced to multiple-choice collection. All 80 unit checks and 33 PR regression checks passed. These images show the repository's offline interface; they do not demonstrate a voice/virtual-agent integration.
+A JavaScript research prototype for comparing fixed-choice questionnaires with typed conversational responses. ClariScale uses deterministic frequency rules, one neutral clarification and a structured fallback, with an eEVA/SAGE embodied-agent integration and reproducible pilot analysis.
 
-![Synthetic demonstration setup](docs/screenshots/setup.png)
+Built by **Jai Lnu and Valentina Kloster**, Florida International University, CAP5627 Socially Interactive Agents, Fall 2026. Origin: **Questionnaires vs. Natural Conversations**. ClariScale names the project, not a newly validated instrument.
 
-![Free-text question](docs/screenshots/free-text.png)
+## See it in five minutes
 
-![Multiple-choice question](docs/screenshots/multiple-choice.png)
+![Historical PSS-4 interface with synthetic input](docs/screenshots/free-text.png)
 
+This authentic screenshot shows the historical offline baseline, not the final PSS-10 agent. For the current standalone demonstration:
 
+```sh
+git clone https://github.com/JaiKaushik03/clariscale.git
+cd clariscale
+npm test
+npm run demo
+# Open http://127.0.0.1:4173
+```
 
-PR #1 review evidence: [full report](PR1_Full_Test_Report.md), [synthetic test export ZIP](PR1_Review_For_Valentina.zip), and [simple Jai guide](Jai_What_Codex_Did.md). All software-test exports are synthetic; PR #1 is not merged.
+Node 22+; Python 3.12+ for analysis. No npm dependencies or install step. The local demo shares mapping/scoring/order logic with the integration, uses fictional responses only, has no avatar and writes no browser persistence. Reload discards progress. It does not emulate institutional deployment.
 
-**Current fallback instructions:** [FALLBACK_WORKFLOW.md](FALLBACK_WORKFLOW.md). Version 1.2.1 uses fixed free-text-first BA order and defers mapping until independent manual coding. Earlier AB/BA instructions, 28-column replacement workbooks and reports below describe version 1.1.0; keep them as historical materials. Do not paste the new 32-column export into the old 28-column sheet. Valentina owns the official v2 trial log and protocol.
+## Implemented features
 
-Version PSS4-offline-1.1.0, frozen October 21 2026. This continues the recovered implementation. The original application, tests, partial screenshots and task tracker are preserved under 07_Backups.
+- Deterministic English frequency classification into five ordinal categories, with explicit abstention.
+- Fixed PSS-10 allocation: A = Q1–5 choices; B = Q6–10 typed answers. Only AB/BA sequence varies.
+- eEVA entry point retaining agent motion requests, consent, two SUS forms, local transactional order reservation and encrypted IndexedDB persistence.
+- Genuine own-session XLSX export. New post-study JSON backup and export validation, without an aggregate participant endpoint.
+- Portable lifecycle model, duplicate-submission guards, scoring/missingness tests, synthetic fixtures and CI.
+- Private-input paired statistical analysis and historical mapper replay.
 
-The offline software and collection infrastructure are verified. Human dry runs, genuine baseline responses and actual hours remain pending. eEVA integration was not verified. No presentation, professor message or university submission was created or sent.
+## Architecture
 
-## Public GitHub repository
+```mermaid
+flowchart LR
+  E[eEVA entry point] --> C[Shared pure core]
+  E --> P[Encrypted IndexedDB]
+  E --> X[Own-session XLSX and JSON]
+  D[Synthetic standalone demo] --> C
+  D --> F[Explicit lifecycle model]
+  X --> U[Manual participant upload]
+  I[Privately supplied research input] --> A[Offline aggregate analysis]
+```
 
-This repository contains the offline application, documentation, empty trial template and clearly labeled synthetic test evidence. Real participant responses and consent records must stay in a separate private folder outside this repository. Do not commit a filled trial workbook or real CSV/JSON exports.
+The eEVA adapter preserves its own UI lifecycle. The new independently tested lifecycle model drives the portable demo; it has not replaced the deployed study. No runtime LLM, emotion classifier, camera or microphone interprets answers.
 
-Valentina can edit source and Markdown files on GitHub or clone the repository for local editing. Word and Excel documents can be downloaded, edited in their applications and committed back. Collaborator access starts after the invitation is accepted.
+## History and evidence boundaries
 
-## Start the application
+| Stage | Location | Meaning |
+|---|---|---|
+| Historical PSS-4 baseline | 01_Application, 02_Tests | Preserved offline fallback while eEVA was unavailable |
+| Participant-study source | provenance/participant-study | Sanitized source snapshot; original order bug remains visible |
+| Post-collection order fix | provenance/order-fixed | Requested order passed into reservation; not retroactive |
+| Later deployed PSS-10 | source manifest and QA notes | Real native XLSX; JSON absent in that deployed release |
+| ClariScale finalization | integrations, demo, test, analysis | New modularization, contracts, JSON backup, tests and documentation |
 
-1. Extract the entire ZIP if using the archive. Keep all folders together.
-2. Open 01_Application/index.html directly in Chrome or Edge. No server, account, internet connection or installation is needed.
-3. Use TESTDEMO and Synthetic software test for a demonstration. Use Team dry run for actual human practice, and Offline fallback baseline for counted classroom fallback trials.
-4. Assign AB or BA before starting. Leave researcher tools closed while the participant answers.
-5. Export CSV and JSON after every participant. Files download to the browser's selected download folder; move verified exports into your restricted local study folder. Keep names separate.
-6. Local recovery is available only when browser file-URL policy permits it. The header reports availability. Recovery stores data locally in the browser profile without app-level encryption. Do not use it as the archive.
+## Verification
 
-## Demonstrate the flow
+```sh
+npm test
+npm run test:legacy
+npm run test:replay
+python -B -m unittest discover -s test -p '*_test.py'
+# Requires a privately supplied original CSV, never commit it:
+python -B analysis/evaluate.py --input /private/source.csv
+# Requires private original baseline rows:
+node analysis/replay.cjs /private/baseline_source_rows.json private-replay
+```
 
-Complete A with any chosen options. In B type Sometimes on item 1. On item 2 type It depends, then Maybe at the neutral clarification prompt; choose one of the five fallback options. Leave item 3 empty twice, then type Fairly often on item 4. After completion, open Researcher tools and its Developer mapping check. Almost never produces category 1. Export CSV and backup JSON. Demonstration rows are synthetic, without being participant findings.
+Tests run with fictional values and an in-memory IndexedDB adapter. CI is configured in [.github/workflows/portable.yml](.github/workflows/portable.yml); no badge substitutes for checking the actual run.
 
-For a human dry run follow the one-page protocol. Consent has not been obtained by the software tests. Participants may stop; New participant flags an unfinished current item and retains earlier rows. An interrupted timed series needs a documented restart under a new code, not an invented completion time.
+## Data and completion workflow
 
-## Use the trial workbook
+Historical native sessions were encrypted locally with AES-GCM and an RSA-OAEP wrapped key, in the collecting Chrome profile. This does not synchronize devices or upload to the team. The legacy offline fallback did not use this encryption.
 
-PSS4_Offline_Trial_Log.xlsx is a replacement pending official-template verification. Open the CSV normally in Excel using File Open. Copy the 28 data columns without the header and paste VALUES into Trial Rows A2:AB201. Keep columns unchanged, and keep missing categories blank because zero means Never. Capacity is 200 item rows, or 25 complete paired sessions. The table has filters, frozen identifiers/headers and validation. To exceed capacity, extend all formulas and validations together and reverify; do not paste outside the supported area.
+The native participant downloads their own unencrypted XLSX, acknowledges the download, opens/copies a configured manual-upload URL, acknowledges upload and sees completion. Acknowledgments are self-reports. The optional new JSON backup does not bypass the required XLSX workflow. Researcher recovery is separate from participant controls.
 
-On Summary choose fallback for actual classroom baseline and PSS4-offline-1.1.0 as version. Dry runs and synthetic examples are excluded by that selection. Primary agreement uses the initial automatic response; clarified automatic agreement is secondary. Manual fallback and missing responses stay in the log but are excluded from automatic agreement. Calculations makes pairing/exclusions visible. Participant Results shows per-session agreement and PSS-4 totals. Record any additional exclusion explanation in error_notes.
+[Deployment/configuration](integrations/eeva/README.md) requires researcher-provided public encryption configuration and a private upload destination. No actual keys or real upload links are included. Institutional eEVA/SAGE accounts, network or VPN access may be required.
 
-Required trial-log field equivalents: trial_id is Trial ID; date/time are UTC date/time; version, participant_id, condition and question identify the observation; the paired closed_category (Calculations column E) is the expected format reference; initial_auto_category is the primary observed outcome and auto_category is the clarified observed outcome. response_ms/condition_ms are timing, while notes/error_notes document interruptions and exclusions. The closed format is not clinical ground truth.
+## Pilot findings
 
-## Tests and reproducibility
+Recomputed from the original CSV, not spreadsheet summary caches. Differences are B minus A.
 
-Open 02_Tests/tests.html to run all 80 unit tests offline in the browser. With Node installed, run node 02_Tests/run_tests.cjs from the project folder. No packages are needed for these unit tests. browser_verify.cjs requires Playwright and installed Edge; it uses an isolated browser context with networking disabled. It never supplies human responses.
+| Measure | Paired n | A mean | B mean | Difference [95% CI] |
+|---|---:|---:|---:|---|
+| SUS (0–100) | 9 | 89.72 | 75.56 | −14.17 [−31.49, +3.16] |
+| Item time (seconds) | 9 | 37.12 | 139.79 | +102.67 [+35.13, +170.22] |
 
-The supplied JSON files report the actual executed checks. SYNTHETIC_Formula_Verification.xlsx, its JSON fixture and synthetic CSVs are testing artifacts only; they are outside the real workbook. Spreadsheet and native Excel reports verify expected results independently. CSV ordinary opening in Excel preserved commas, internal quotes and multiline text; a legacy OpenText route split a multiline field, so use normal File Open as verified here.
+The two subsets differ. B took longer in all nine eligible time pairs. Different question content confounds format, so these are exploratory associations, not causal effects or proof of noninferiority. See [evaluation](docs/evaluation.md) for exclusions, sensitivity analysis and replay. No overall accuracy improvement is supported.
 
-The two requested guides were opened in Microsoft Word and rendered to seven-page PDFs for visual review. The one-page protocol was rendered and checked. LibreOffice was unavailable, so native Word supplied rendering. Browser images are genuine screenshots; spreadsheet images are genuine workbook renders. No screenshot contains actual participant responses.
+## Engineering contributions and credit
 
-## Folder guide
+Jai's technical work includes the JavaScript study interface, deterministic mapper integration, order-debugging work, browser persistence/export engineering and regression verification, with AI assistance. Valentina's study/protocol, independent coding, analysis and presentation contributions remain credited. The research project is shared work; commit attribution is preserved. See [portfolio](docs/portfolio.md).
 
-01_Application is the frozen offline app. 02_Tests contains test source, evidence and clearly labeled synthetic fixtures. 03_Baseline has the real empty replacement log, one-page protocol and version/hash record. 04_Project_Tracker contains the updated original tracker. 05_Valentina_Handoff contains the technical Word guide, evidence table and screenshot index. 06_Jai_Guide contains the code explanation and professor questions. 07_Backups preserves recovered originals.
+eEVA/SAGE supplies the 3D agent and framework APIs. This project orchestrates the assessment and requests its programmed cue policy; it does not implement the underlying avatar renderer.
 
-## Before October 26
+## Read further
 
-Run 1–2 human team dry runs, collect a few actual classmates' paired trials, calculate genuine descriptive results, confirm actual hours and update the tracker. Valentina prepares the numbered presentation with at least 15-point text. Both members review and rehearse. By October 26 at 11:59 PM Eastern submit p2-2.1-kloster-liu.pdf, the tracker and the real baseline log to Canvas. Full baseline is due November 9; later evaluation, SUS and eEVA work remain.
+[Architecture](docs/architecture.md) · [Protocol](docs/protocol.md) · [Scoring](docs/scoring.md) · [Contracts](docs/contracts.md) · [Provenance](docs/provenance.md) · [Evaluation](docs/evaluation.md) · [Known issues](docs/known-issues.md)
+
+## Responsible use and licensing
+
+Research prototype, not diagnosis or treatment. Never commit response text, individual scores, archives, lookup tables, credentials, private keys or real upload URLs. Use synthetic fixtures. Existing licensing/attribution is preserved; no new license is granted. Redistribution rights for institutional framework assets and questionnaire materials must be checked separately.
+
+AI assistance: ChatGPT/Codex assisted implementation, debugging, tests, documentation and analysis scripting. Authors remain responsible for understanding and checking the work.

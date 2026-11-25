@@ -18,3 +18,12 @@ Thumbs.db
 
 # Isolated synthetic browser run artifacts
 02_Tests/pr1_evidence/
+
+# ClariScale private research inputs and temporary verification
+.build/
+private/
+*.private.*
+*source.csv
+*Archive*.json
+*private*key*
+integrations/eeva/src/config.local.json

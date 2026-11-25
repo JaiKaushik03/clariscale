@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-25",
+  "note": "Private inputs were read only. No participant records or keys are included.",
+  "sources": {
+    "participant-study/main.js": "5389d49a37d2128852cb1f1d29f6e9a0f14cfd3a7dd7dc743ad9f7581f23532c",
+    "participant-study/assessment.json": "9ede1df8a3b413dff99ca3e1fb522bddfc4558c89d4603ccf09da2ce14dd6ed6",
+    "order-fixed/main.js": "54ac826e2d3a5434c4999f274d6f8892099eb2ea1dc8a0eab4882e2da3ca9bfc",
+    "order-fixed/assessment.json": "5aca1975014e8f7c7d535ad53b30716e2b3be90a4ecb4ae2a9d6b4324f3e19bc",
+    "deployed/main.js": "a78de18a1a182c34fe79a8cbe74a665d71579f1b26daf53f41d2814de3a9bc85"
+  }
+}
