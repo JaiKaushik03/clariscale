@@ -50,7 +50,7 @@ The eEVA adapter preserves its own UI lifecycle. The new independently tested li
 
 | Stage | Location | Meaning |
 |---|---|---|
-| Historical PSS-4 baseline | legacy/01_Application, legacy/02_Tests | Preserved offline fallback while eEVA was unavailable |
+| Historical PSS-4 baseline | Git history | Preserved offline fallback while eEVA was unavailable |
 | Participant-study source | provenance/participant-study | Sanitized source snapshot; original order bug remains visible |
 | Post-collection order fix | provenance/order-fixed | Requested order passed into reservation; not retroactive |
 | Later deployed PSS-10 | source manifest and QA notes | Real native XLSX; JSON absent in that deployed release |
@@ -60,7 +60,6 @@ The eEVA adapter preserves its own UI lifecycle. The new independently tested li
 
 ```sh
 npm test
-npm run test:legacy
 npm run test:replay
 python -B -m unittest discover -s test -p '*_test.py'
 # Requires a privately supplied original CSV, never commit it:
@@ -73,7 +72,7 @@ Tests run with fictional values and an in-memory IndexedDB adapter. CI is config
 
 ## Data and completion workflow
 
-Historical native sessions were encrypted locally with AES-GCM and an RSA-OAEP wrapped key, in the collecting Chrome profile. This does not synchronize devices or upload to the team. The legacy offline fallback did not use this encryption.
+Historical native sessions were encrypted locally with AES-GCM and an RSA-OAEP wrapped key, in the collecting Chrome profile. This does not synchronize devices or upload to the team. The historical offline fallback did not use this encryption.
 
 The native participant downloads their own unencrypted XLSX, acknowledges the download, opens/copies a configured manual-upload URL, acknowledges upload and sees completion. Acknowledgments are self-reports. The optional new JSON backup does not bypass the required XLSX workflow. Researcher recovery is separate from participant controls.
 

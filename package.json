@@ -8,7 +8,6 @@
   },
   "scripts": {
     "test": "node --test test/*.test.cjs && node test/allocator.cjs",
-    "test:legacy": "node legacy/02_Tests/run_tests.cjs && node legacy/02_Tests/pr1_regressions.cjs",
     "test:replay": "node analysis/replay.cjs",
     "demo": "node demo/server.cjs"
   }
