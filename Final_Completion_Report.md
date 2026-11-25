@@ -33,8 +33,8 @@ The project directory is this repository root.
 - Trial log: [PSS4_Offline_Trial_Log.xlsx](03_Baseline/PSS4_Offline_Trial_Log.xlsx)
 - One-page protocol: [PSS4_One_Page_Baseline_Protocol.pdf](03_Baseline/PSS4_One_Page_Baseline_Protocol.pdf)
 - Updated original tracker: [Kloster_Liu_CAP5627_Project1_TaskList_Updated.xlsx](04_Project_Tracker/Kloster_Liu_CAP5627_Project1_TaskList_Updated.xlsx)
-- Valentina handoff: [Technical_Handoff_for_Valentina.docx](05_Valentina_Handoff/Technical_Handoff_for_Valentina.docx)
-- Screenshots: [README.md](05_Valentina_Handoff/Screenshots/README.md)
+- Technical handoff: [Technical_Handoff.docx](05_Technical_Handoff/Technical_Handoff.docx)
+- Screenshots: [README.md](05_Technical_Handoff/Screenshots/README.md)
 - Jai guide: [Jai_Implementation_Explanation.docx](06_Jai_Guide/Jai_Implementation_Explanation.docx)
 - Run instructions: [README.md](README.md)
 
@@ -48,7 +48,7 @@ Open index.html, enter TESTDEMO, select AB and Synthetic software test, then Sta
 
 ## 7 Valentina handoff
 
-Give Valentina the whole project folder or ZIP so relative app/test links remain usable. Her primary materials are Technical_Handoff_for_Valentina.docx, Technical_Evidence.csv, all 13 Screenshots PNGs and their index, the updated tracker, protocol and trial workbook. The handoff includes the original research question, variables, hypotheses, architecture, algorithm, research/theory attribution, social controls, exact test evidence, a blank genuine-results table and presentation requirements. The Jai guide provides operation and rehearsal support. No PowerPoint or assignment presentation PDF was created.
+Give Valentina the whole project folder or ZIP so relative app/test links remain usable. Her primary materials are Technical_Handoff.docx, Technical_Evidence.csv, all 13 Screenshots PNGs and their index, the updated tracker, protocol and trial workbook. The handoff includes the original research question, variables, hypotheses, architecture, algorithm, research/theory attribution, social controls, exact test evidence, a blank genuine-results table and presentation requirements. The Jai guide provides operation and rehearsal support. No PowerPoint or assignment presentation PDF was created.
 
 ## 8 Remaining work before October 26
 

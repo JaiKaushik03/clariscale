@@ -59,7 +59,7 @@ The two requested guides were opened in Microsoft Word and rendered to seven-pag
 
 ## Folder guide
 
-01_Application is the frozen offline app. 02_Tests contains test source, evidence and clearly labeled synthetic fixtures. 03_Baseline has the real empty replacement log, one-page protocol and version/hash record. 04_Project_Tracker contains the updated original tracker. 05_Valentina_Handoff contains the technical Word guide, evidence table and screenshot index. 06_Jai_Guide contains the code explanation and professor questions. 07_Backups preserves recovered originals.
+01_Application is the frozen offline app. 02_Tests contains test source, evidence and clearly labeled synthetic fixtures. 03_Baseline has the real empty replacement log, one-page protocol and version/hash record. 04_Project_Tracker contains the updated original tracker. 05_Technical_Handoff contains the technical Word guide, evidence table and screenshot index. 06_Jai_Guide contains the code explanation and professor questions. 07_Backups preserves recovered originals.
 
 ## Before October 26
 
